@@ -1,0 +1,16 @@
+{
+    "blogs": [
+    {
+      "id": 1,
+      "title": "How to Care for Curly Hair",
+      "content": "Tips for maintaining healthy curls.",
+      "tags": ["curly", "care"]
+    },
+    {
+      "id": 2,
+      "title": "Top 10 Hair Products",
+      "content": "A review of the best hair products.",
+      "tags": ["products", "reviews"]
+}]
+}
+  
