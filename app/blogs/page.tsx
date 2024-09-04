@@ -1,22 +1,39 @@
-type blog = {
-  id:number;
-  title:string;
-  content:string;
-  tags:object;
+'use client';
+
+import { useEffect, useState } from "react";
+import blogsData from '../../data/blogs.json';
+
+//  type for  blog data
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  tags: string[];
 }
 
-export default async function Blogs () {
-  const response = await fetch("http://localhost:3001/blogs");
-  const blogs= await response.json();
+const Blogs: React.FC = () => {
+  const [blogs, setBlogs] = useState<Blog[]>([]); 
+
+  useEffect(() => {
+    setBlogs(blogsData.blogs); 
+  }, []); 
 
   return (
-   <div>
-    {blogs.map((blog:blog)=> (
-      <div key={blog.id}>
-        <h2>{blog.title}</h2>
-        <p>{blog.content}</p>
-      </div>
-    ))}
-   </div>
-  )
-}
+    <div>
+      {blogs.length > 0 ? (
+        blogs.map(blog => (
+          <div key={blog.id}>
+            <h2>{blog.title}</h2>
+            <p>{blog.content}</p>
+          </div>
+        ))
+      ) : (
+        <div>
+          <p>Loading...</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Blogs;
