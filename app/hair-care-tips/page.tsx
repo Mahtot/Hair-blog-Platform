@@ -1,5 +1,7 @@
-export const HairCareTips = () => {
+const HairCareTips = () => {
   return (
     <div>HairCareTips</div>
   )
 }
+
+export default HairCareTips
