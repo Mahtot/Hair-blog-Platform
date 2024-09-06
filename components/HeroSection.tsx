@@ -24,7 +24,7 @@ const HeroSection = () => {
     ];
 
     return (
-        <div className={`md:w-[80vw] p-8 rounded-3xl border justify-center items-center mx-auto flex flex-col md:flex-row bg-[#F6BFC4] bg-gradient-to-t from-[#F1B5BD] via-[#F6BFC5] to-[#F2B9BF] shadow-lg ${montserrat.variable}`}>
+        <div className={`md:w-[80vw] p-8 rounded-md border justify-center items-center mx-auto flex flex-col md:flex-row bg-[#F6BFC4] bg-gradient-to-t from-[#F1B5BD] via-[#F6BFC5] to-[#F2B9BF] shadow-lg ${montserrat.variable}`}>
             {pics.map((item, index) => (
                 <div key={index} className={`flex gap-1 flex-col m-4 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 relative ${index % 2 === 0 ? 'rotate-1 md:top-10' : '-rotate-1'}`}>
                     <Image

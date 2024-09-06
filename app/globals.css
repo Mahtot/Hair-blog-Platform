@@ -15,13 +15,17 @@
 }
 body {
   margin: 0;
-
   padding: 0;
-}
-body {
-  font-family: var(--font-nunito); /* Apply Nunito globally for testing */
+  letter-spacing: 1;
+  font-family: var(--font-nunito);
+  overflow-x: hidden;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
+.headline {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 @media screen and (max-width: 767px) {
   .fixed-body {
     position: fixed;

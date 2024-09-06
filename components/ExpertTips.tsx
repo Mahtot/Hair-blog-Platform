@@ -32,7 +32,7 @@ const ExpertTips = () => {
             <h1 className="font-bold text-2xl md:text-3xl text-[#1d1d1d]">
                 Expert Tips
             </h1>
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-10 font-montserrat">
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-7 font-montserrat">
                 {blogs.length > 0 ? (
                     blogs.slice(0, 3).map(blog => (
                         <Card key={blog.id} blog={blog} />
