@@ -1,13 +1,9 @@
 'use client';
-
+import Card from "./Card";
 import { useEffect, useState } from "react";
-import blogsData from '../data/blogs.json';
 import Image from "next/image";
 import Link from "next/link";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
-import Card from "./Card";
-
-
+import blogsData from '../data/blogs.json';
 
 
 // Type for blog data
@@ -20,7 +16,7 @@ interface Blog {
     by: string;
 }
 
-const ExpertTips = () => {
+const HairStyles = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
 
     useEffect(() => {
@@ -28,13 +24,13 @@ const ExpertTips = () => {
     }, []);
 
     return (
-        <div className="flex w-[100vw] md:w-[80vw] p-10 mx-auto mt-[200px] flex-col">
-            <h1 className="font-bold text-2xl md:text-3xl text-[#1d1d1d]">
-                Expert Tips
+        <div className="flex w-[100vw] md:w-[80vw] p-10 mx-auto mt-[100px] flex-col">
+            <h1 className="font-bold text-2xl md:text-3xl text-[#1d1d1d] text-center">
+                Hair Styles
             </h1>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-10 font-montserrat">
                 {blogs.length > 0 ? (
-                    blogs.slice(0, 3).map(blog => (
+                    blogs.slice(3, 9).map(blog => (
                         <Card key={blog.id} blog={blog} />
                     ))
                 ) : (
@@ -44,7 +40,6 @@ const ExpertTips = () => {
                 )}
             </div>
         </div>
-    );
-};
-
-export default ExpertTips;
+    )
+}
+export default HairStyles

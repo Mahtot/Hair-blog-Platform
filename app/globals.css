@@ -21,6 +21,7 @@ body {
 body {
   font-family: var(--font-nunito); /* Apply Nunito globally for testing */
 }
+
 @media screen and (max-width: 767px) {
   .fixed-body {
     position: fixed;
