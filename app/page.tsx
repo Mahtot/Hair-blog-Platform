@@ -1,9 +1,16 @@
-import Image from "next/image";
+import ExpertTips from "@/components/ExpertTips";
+import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/NavBar/Navbar";
+import YourHair from "@/components/YourHair";
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     <h1>Hello World!</h1>
+    <main className="flex flex-col ">
+      <Navbar />
+      <HeroSection />
+      <YourHair />
+      <ExpertTips />
     </main>
   );
 }

@@ -1,16 +1,11 @@
 {
-    "blogs": [
+  "blogs": [
     {
       "id": 1,
-      "title": "How to Care for Curly Hair",
-      "content": "Tips for maintaining healthy curls.",
-      "tags": ["curly", "care"]
-    },
-    {
-      "id": 2,
-      "title": "Top 10 Hair Products",
-      "content": "A review of the best hair products.",
-      "tags": ["products", "reviews"]
-}]
+      "title": "Does Castor Oil Help Treat Baldness?",
+      "content": "If you are wondering how to use castor oil for baldness, you probably have a lot of questions! We will respond to all your inquiries. Hair loss is a difficult experience. It can be heartbreaking to watch your hair become thinner and thinner. When you are terrified to run your fingers through your tresses, it’s time to seek assistance. But how do you know which product will perform when dozens on the market guarantee to stop hair loss? A study conducted on 18,368 participants found that the incidence of alopecia areata (AA) had increased from 0.199% in 2016 to 0.222% in 2019. It was further noted that the incidence of alopecia totalis increased from 0.012% in 2016 to 0.019% in 2019. One simple approach to prevent this problem is to use natural medicines that don’t cause any adverse effects. For example, topical application of castor oil has long been used for hair loss treatment.",
+      "tags": ["straight", "treatment", "care"],
+      "imgUrl": "../public/hairLoss.jpeg"
+    }
+  ]
 }
- 
