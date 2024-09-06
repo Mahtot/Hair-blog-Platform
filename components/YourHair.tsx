@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const YourHair = () => {
     return (
-        <div className="flex flex-col md:w-[80vw] mx-auto mt-20 p-5 bg-white rounded-lg shadow-md">
+        <div className="flex flex-col md:w-[80vw] mx-auto mt-[200px] p-5 bg-white rounded-lg shadow-md">
             <h1 className="font-montserrat text-[#4f0e39] text-3xl md:text-5xl font-bold text-center shadow-sm">
                 My Secrets for Long and Healthy Hair
             </h1>
