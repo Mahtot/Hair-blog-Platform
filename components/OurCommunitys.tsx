@@ -11,6 +11,7 @@ import img9 from "@/public/hairStyle6.jpeg";
 import img10 from "@/public/hairStyle7.jpeg";
 import img11 from "@/public/hairStyle8.jpeg";
 import img12 from "@/public/fashionHai.jpeg";
+import Marquee from "react-fast-marquee";
 
 const OurCommunitys = () => {
     const imgsFirst = [img1, img2, img3, img4, img5, img6];
@@ -23,30 +24,33 @@ const OurCommunitys = () => {
             </h1>
 
             {/* Marquee for imgsFirst */}
-            <div className="marquee">
-                <div className="marquee-content">
-                    {imgsFirst.map((item, index) => (
-                        <Image
-                            src={item}
-                            alt="Our community member"
-                            key={index}
-                            className="rounded-lg sm:w-[80vw] md:h-[440px] shadow-md mx-2  transition-all duration-300"
-                        />
-                    ))}
+            <div className="marquee-left">
+                <div className="marquee-content-left">
+                    <Marquee direction="right">
+                        {imgsFirst.map((item, index) => (
+                            <Image
+                                src={item}
+                                alt="Our community member"
+                                key={index}
+                                className="h-[300px] w-[220px] rounded-lg mx-2 transition-all duration-300"
+                            />
+                        ))}</Marquee>
                 </div>
             </div>
 
             {/* Marquee for imgsSecond */}
-            <div className="marquee reverse">
-                <div className="marquee-content">
-                    {imgsSecond.map((item, index) => (
-                        <Image
-                            src={item}
-                            alt="Our community member"
-                            key={index}
-                            className="rounded-lg sm:w-[80vw] md:h-[440px] shadow-md mx-2 transition-all duration-300"
-                        />
-                    ))}
+            <div className="marquee-right">
+                <div className="marquee-content-right">
+                    <Marquee >
+                        {imgsSecond.map((item, index) => (
+                            <Image
+                                src={item}
+                                alt="Our community member"
+                                key={index}
+                                className="h-[300px] w-[220px] rounded-lg mx-2 transition-all duration-300"
+                            />
+                        ))}
+                    </Marquee>
                 </div>
             </div>
 
