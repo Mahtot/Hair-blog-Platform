@@ -29,7 +29,7 @@ const ExpertTips = () => {
 
     return (
         <div className="flex w-[100vw] md:w-[80vw] p-10 mx-auto mt-[200px] flex-col">
-            <h1 className="font-bold text-2xl md:text-3xl text-[#1d1d1d]">
+            <h1 className="font-bold text-3xl md:text-4xl text-center text-[#1d1d1d]">
                 Expert Tips
             </h1>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-7 font-montserrat">
