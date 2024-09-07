@@ -1,23 +1,21 @@
-import Link from "next/link"
+import Link from "next/link";
+
 const Cta = () => {
     return (
-        <div className="bg-[#f9f9f9] py-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1d1d1d] mb-4">
-                Share Your Hair Journey with Us!
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-                Your experiences and insights could inspire others. Join our community and help everyone achieve healthy, beautiful hair!
+        <div className="cta flex flex-col items-center  py-12 px-4 text-center mt-[100px]  shadow-md font-montserrat">
+            <h1 className="font-bold text-3xl md:text-4xl text-[#9C3A14] font-montserrat mb-5">
+                Got Amazing Hair Tips or Stories?
+            </h1>
+            <p className="text-lg text-gray-700 mb-8 max-w-xl mx-auto leading-relaxed font-montserrat">
+                Whether you're a professional hairstylist or simply passionate about hair care,
+                your knowledge and stories are invaluable. The world is ready for your tips and experiences!
             </p>
-            <a
-                href="/post-blog"  // Adjust the link to your blog posting page
-                className="bg-[#007bff] text-white py-2 px-6 rounded-lg hover:bg-[#0056b3] transition duration-300"
-            >
-                Share Your Experience
-            </a>
+            <Link href={`blogs`} className="mt-auto max-w-max p-2 px-10 rounded-sm flex gap-2 border border-[#b57d6a] bg-white text-[#9C3A14] hover:text-white hover:bg-[#9C3A14] transition-all duration-300">
+                Share Your Story
+
+            </Link>
         </div>
     );
 };
 
-
-
-export default Cta
+export default Cta;

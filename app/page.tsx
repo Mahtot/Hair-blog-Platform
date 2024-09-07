@@ -1,5 +1,6 @@
 import Cta from "@/components/Cta";
 import ExpertTips from "@/components/ExpertTips";
+import Footer from "@/components/Footer";
 import HairStyles from "@/components/HairStyles";
 import Headline from "@/components/Headline";
 import HeroSection from "@/components/HeroSection";
@@ -19,6 +20,7 @@ export default function Home() {
       <HairStyles />
       <OurCommunitys />
       <Cta />
+      <Footer />
     </main>
   );
 }
