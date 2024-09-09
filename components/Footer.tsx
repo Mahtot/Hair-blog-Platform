@@ -38,7 +38,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col self-center">
                     <h1 className="text-lg font-bold">Subscribe</h1>
-                    <p className="text-sm">Don't miss out on new hair tips for a healthier you.</p>
+                    <p className="text-sm">Don not miss out on new hair tips for a healthier you.</p>
                     <form onSubmit={(e) => handleSubmit(e)} className="flex mt-2 ">
                         <input
                             type="email"
