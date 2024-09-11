@@ -5,7 +5,8 @@ import { useState, useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 
 const UserAccount = () => {
-  const { user, login, register, logout } = useContext(UserContext) || {};
+  const context = useContext(UserContext);
+  const { user, login, register, logout } = context || {}; // Ensure context is defined
   const [showLogin, setShowLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +19,7 @@ const UserAccount = () => {
       alert("Please enter both email and password.");
       return;
     }
-    login(email, password);
+    login && login(email, password);
   };
 
   // Handles registration
@@ -31,7 +32,7 @@ const UserAccount = () => {
       alert("Passwords do not match.");
       return;
     }
-    register({ username, email, password });
+    register && register({ username, email, password });
   };
 
   // Render login form
