@@ -19,8 +19,7 @@ body {
   letter-spacing: 1;
   font-family: var(--font-nunito);
   overflow-x: hidden;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font-montserrat);
 }
 
 .headline {

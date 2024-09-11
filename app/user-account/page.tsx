@@ -5,7 +5,7 @@ import { useState, useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 
 const UserAccount = () => {
-  const { user, login, register, logout } = useContext(UserContext);
+  const { user, login, register, logout } = useContext(UserContext) || {};
   const [showLogin, setShowLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
