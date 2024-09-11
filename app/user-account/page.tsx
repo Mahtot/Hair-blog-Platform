@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar/Navbar";
 import { useState, useContext } from "react";
@@ -56,7 +56,7 @@ const UserAccount = () => {
         Login
       </button>
       <p className="mt-4">
-        Don't have an account?{" "}
+        Do not have an account?{" "}
         <span
           className="text-blue-500 cursor-pointer"
           onClick={() => setShowLogin(false)}
