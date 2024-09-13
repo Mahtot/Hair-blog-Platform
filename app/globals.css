@@ -19,7 +19,7 @@ body {
   letter-spacing: 1;
   font-family: var(--font-nunito);
   overflow-x: hidden;
-  font-family: var(--font-montserrat);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .headline {
@@ -53,7 +53,7 @@ body {
       rgb(118, 118, 118) 88%,
       rgb(118, 118, 118) 91%,
       rgb(99, 99, 99) 91%,
-      rgb(99, 99, 99) 100%
+      #636363 100%
     ),
     linear-gradient(
       157.5deg,

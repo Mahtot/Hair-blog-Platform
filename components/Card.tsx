@@ -18,7 +18,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ blog }) => {
     return (
-        <div className="mb-10 flex flex-col items-center justify-center">
+        <div className="mb-10  flex flex-col items-center justify-center">
             <Image
                 src={require(`../public/${blog.imgUrl}`).default}
                 alt={blog.tags[0]}

@@ -23,8 +23,8 @@ const Footer = () => {
     }
 
     return (
-        <div className="footer flex flex-col text-white mt-[150px] p-2 md:p-10 md:pb-3">
-            <div className="flex mt-5 flex-col lg:flex-row justify-between items-start gap-10">
+        <div className="footer flex flex-col text-white mt-[150px] p-10 md:p-10 md:pb-3">
+            <div className="flex mt-5 flex-col sm:flex-row justify-between items-start gap-10">
                 <div className="flex flex-col gap-2">
                     {menuItems.map((item, index) => (
                         <Link
@@ -38,7 +38,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col self-center">
                     <h1 className="text-lg font-bold">Subscribe</h1>
-                    <p className="text-sm">Don not miss out on new hair tips for a healthier hair.</p>
+                    <p className="text-sm">Do not miss out on new hair tips for a healthier hair.</p>
                     <form onSubmit={(e) => handleSubmit(e)} className="flex mt-2 ">
                         <input
                             type="email"

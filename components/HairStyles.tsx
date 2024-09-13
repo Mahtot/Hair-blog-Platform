@@ -6,6 +6,7 @@ import Link from "next/link";
 import blogsData from '../data/blogs.json';
 
 
+
 // Type for blog data
 interface Blog {
     id: number;
