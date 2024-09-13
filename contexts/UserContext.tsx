@@ -9,6 +9,7 @@ interface Blog {
     by: string;
 }
 
+
 interface User {
     username: string;
     email: string;
@@ -19,6 +20,15 @@ interface User {
     savedBlogs: number[];
 }
 
+interface Comment {
+    id: number;
+    name: string;
+    email: string;
+    comment: string;
+}
+
+type Comments = Comment[];
+
 interface UserContextType {
     user: User | null;
     setUser: (user: User | null) => void;
@@ -27,12 +37,14 @@ interface UserContextType {
     register: (userData: User) => Promise<boolean>;
     addBlog: (blog: Blog) => void;  // function to add a blog
     removeBlog: (title: string) => void; // function to remove a blog by title
+    addComments: (comment: Comment) => void;  //function to add comments
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
+    const [comments, setComments] = useState<Comments>([]);
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -40,6 +52,17 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
             setUser(JSON.parse(storedUser));
         }
     }, []);
+
+
+    const addComments = (comment: Comment) => {
+        const storedComments = localStorage.getItem('storedComments');
+        const comments = storedComments ? JSON.parse(storedComments) : [];
+
+        comments.push(comment);
+        localStorage.setItem('storedComments', JSON.stringify(comments));
+        setComments(comments);
+        alert('Thank you for your comment!')
+    }
 
     const register = async (userData: User) => {
         const storedUsers = localStorage.getItem("registeredUsers");
@@ -126,7 +149,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
 
     return (
-        <UserContext.Provider value={{ user, setUser, login, logout, register, addBlog, removeBlog }}>
+        <UserContext.Provider value={{ user, setUser, login, logout, register, addBlog, removeBlog, addComments }}>
             {children}
         </UserContext.Provider>
     );

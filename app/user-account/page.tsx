@@ -112,7 +112,7 @@ const UserAccount = () => {
       <button onClick={handleRegister} className="bg-[#636363] text-white rounded-lg w-full p-3 hover:bg-[#9C3A14] transition-all duration-300">
         CREATE ACCOUNT
       </button>
-      <p className="mt-4 font-thin">
+      <p className="mt-4 ">
         Already have an account? Please{" "}
         <span
           className="text-blue-500 cursor-pointer"

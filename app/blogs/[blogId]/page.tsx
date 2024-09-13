@@ -8,6 +8,9 @@ import Image from "next/image";
 import PopularBlogs from "@/components/PopularBlogs";
 import LatestBlogs from "@/components/LatestBlogs";
 import UserContext from "@/contexts/UserContext";
+import img from "@/public/beautiful.jpeg";
+import { comment } from "postcss";
+
 // Type for blog data
 interface Blog {
   id: number;
@@ -28,12 +31,37 @@ interface User {
   savedBlogs: number[];
 }
 
+interface Comment {
+  id: number;
+  name: string;
+  email: string;
+  comment: string;
+}
 
 const BlogDetails = ({ params }: { params: { blogId: string } }) => {
   const [blog, setBlog] = useState<Blog | null>(null);
   const [errMsg, setErrMsg] = useState<boolean>(false);
-  const { user, setUser } = useContext(UserContext) || {}; // Get user from context
+  const { user, setUser, addComments } = useContext(UserContext) || {}; // Get user from context
   const [blogSaved, setBlogSaved] = useState<boolean>(false);
+  const [commentForm, setCommentForm] = useState<Comment>({
+    id: 0,
+    name: '',
+    email: '',
+    comment: ''
+  })
+
+
+  const handleChangeComment = (e: any) => {
+    const { name, value } = e.target;
+    setCommentForm(prevData => ({ ...prevData, [name]: value }))
+  }
+
+  const handleSubmitComment = (e: any) => {
+    e.preventDefault();
+    addComments?.(commentForm);
+    setCommentForm({ id: 0, email: '', name: '', comment: '' })
+    console.log(comment)
+  }
 
   useEffect(() => {
     const blogId = parseInt(params.blogId);
@@ -114,7 +142,7 @@ const BlogDetails = ({ params }: { params: { blogId: string } }) => {
           <h1 className="text-2xl font-bold">Blog Not Found!</h1>
         </div>
       ) : (
-        <div className="flex flex-col md:flex-row w-full md:w-3/4 mx-auto justify-center mt-10">
+        <div className="comments flex flex-col md:flex-row w-full md:w-3/4 mx-auto justify-center mt-10">
           <div className="w-full flex flex-col p-5 gap-5">
             <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
             <p className="text-gray-600">Written by <span className="text-[#9C3A14]">{blog.by}</span></p>
@@ -146,7 +174,33 @@ const BlogDetails = ({ params }: { params: { blogId: string } }) => {
                 </span>
               ))}
             </div>
+            <div className="comments flex flex-col text-[#424141] gap-5">
+              <h2 className="font-bold text-[#424141]  text-2xl md:text-4xl mb-5">Comments </h2>
+              <div className="flex gap-3">
+                <div className="flex items-center ">
+                  <Image src={img} alt="commentator" className="w-[80px] sm:w-20 h-[60px] sm:h-16 rounded-[50%] " />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <p className="font-bold">Rita</p>
+                  <p>Finally I realized I am not alone on this! Nice Tips!</p>
+                </div>
+              </div>
+              <div>
+                <h2 className="flex  flex-col sm:flex-row gap-2 ">Was this article helpful?<button className="text-[#9C3A14] hover:text-[#da6d42] text-left hover:underline  transition-all duration-300">Leave a comment</button></h2>
+                <form onSubmit={handleSubmitComment} className={` mt-3 flex flex-col   sm:w-[40vw] gap-3`}>
+                  <input type="text" name="name" value={commentForm.name}
+                    onChange={handleChangeComment} placeholder="Name" required className="p-2 pb-0 border border-t-0 border-l-0 border-r-0 outline-0 focus:outline-0 focus:border-[#8e5c49] focus:border-b-2 transition-all duration-300" />
+                  <input type="email" name="email" value={commentForm.email}
+                    onChange={handleChangeComment} placeholder="Email address" required className="p-2 pb-0 border border-t-0 border-l-0 border-r-0 outline-0 focus:outline-0 focus:border-[#8e5c49] focus:border-b-2 transition-all duration-300" />
+                  <textarea name="comment" value={commentForm.comment}
+                    onChange={handleChangeComment} placeholder="Name" className="p-2 pb-0 border border-t-0 border-l-0 border-r-0 outline-0 focus:outline-0 focus:border-[#8e5c49] focus:border-b-2 transition-all duration-300" />
+                  <button type="submit" className="sm:w-[200px] bg-[#F6BFC5] text-[#9C3A14] p-2 rounded shadow-md hover:bg-[#9C3A14] hover:text-white transition duration-300">
+                    Comment
+                  </button>
+                </form>
+              </div>
 
+            </div>
           </div>
           <div className="hidden md:flex flex-col md:w-1/3 p-5 ml-5">
             <PopularBlogs />

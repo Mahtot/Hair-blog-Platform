@@ -10,7 +10,8 @@ import Image from "next/image";
 import { FaPlus } from "react-icons/fa6";
 import { CiEdit } from "react-icons/ci";
 import blogsData from '@/data/blogs.json';
-import Card from "@/components/Card";
+import Link from "next/link";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 
 interface BlogFormData {
@@ -310,24 +311,40 @@ const Page = () => {
                 );
             case 'savedBlogs':
                 return (
-                    <div className="p-4 flex flex-col  items-center justify-center">
-                        <h2 className="text-xl font-bold mb-4 text-[#8e5c49]">Saved Blogs</h2>
+                    <div className="p-4 flex flex-col items-center justify-center bg-gradient-to-t from-[#F1B5BD] via-[#F6BFC5] to-[#F2B9BF]">
+                        <h2 className="text-2xl font-bold mb-6 text-[#8e5c49]">Saved Blogs</h2>
                         {user?.savedBlogs && user.savedBlogs.length > 0 ? (
-                            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-7 font-montserrat">
-                                {user.savedBlogs.map((blogId: number) => {
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-montserrat">
+                                {user.savedBlogs.map((blogId) => {
                                     const blog = blogsData.blogs.find(b => b.id === blogId);
-                                    return blog ? (<>
-
-                                        <Card key={blogId} blog={blog} />
-                                    </>
+                                    return blog ? (
+                                        <div key={blog.id} className="flex flex-col items-center justify-center bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                                            <Image
+                                                src={`/${blog.imgUrl}`} // Adjusted for public folder
+                                                alt={blog.tags[0] || 'Blog image'}
+                                                className="w-full h-56 object-cover"
+                                                width={500}
+                                                height={400}
+                                            />
+                                            <div className="p-4 flex flex-col justify-between h-full">
+                                                <p className="text-sm text-gray-500">By {blog.by}</p>
+                                                <h2 className="text-xl font-semibold text-[#8e5c49]">{blog.title}</h2>
+                                                <p className="mt-2 line-clamp-3 text-gray-700">{blog.content}</p>
+                                                <Link href={`blogs/${blog.id}`} className="mt-4 inline-block p-2 rounded-md border border-[#b57d6a] bg-[#F2B9BF] text-[#9C3A14] hover:bg-[#9C3A14] hover:text-white transition-all duration-300">
+                                                    Read more
+                                                    <MdOutlineArrowRightAlt size={'1.5rem'} className="inline-block ml-1" />
+                                                </Link>
+                                            </div>
+                                        </div>
                                     ) : null;
                                 })}
                             </div>
                         ) : (
-                            <h1 className="text-center">No Saved Blogs yet.</h1>
+                            <h1 className="text-center text-lg text-gray-600">No Saved Blogs yet.</h1>
                         )}
                     </div>
                 );
+
 
             default:
                 return null;
