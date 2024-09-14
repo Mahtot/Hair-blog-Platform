@@ -32,6 +32,7 @@ const Gallery = () => {
   useEffect(() => {
     const initializeGallery = () => {
       const galleryElements = document.querySelectorAll('.gallery');
+      console.log('Gallery Elements:', galleryElements);
       if (galleryElements.length > 0) {
         fjGallery(galleryElements, {
           itemSelector: '.gallery__item',
@@ -69,6 +70,7 @@ const Gallery = () => {
       }
     }
   }, [blogs]);
+
 
 
   return (
