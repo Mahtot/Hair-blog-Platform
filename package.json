@@ -27,6 +27,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
+    "flickr-justified-gallery": "^2.2.0",
     "json-server": "^0.17.4",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
