@@ -34,7 +34,7 @@ const SearchResults = ({ params }: { params: { searchQuery: string } }) => {
             <Navbar />
             <div className="flex flex-col items-center py-8 px-4">
                 <h2 className="text-2xl font-bold text-[#3f2436] mb-4">
-                    {filteredBlogs.length}  Search Results for "{params.searchQuery}"
+                    {filteredBlogs.length}  Search Results for &quot;{params.searchQuery}&quot;
                 </h2>
 
                 {filteredBlogs.length > 0 ? (

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import blogsData from '../../data/blogs.json';
-
+import Navbar from "@/components/NavBar/Navbar";
+import Footer from "@/components/Footer";
 //  type for  blog data
 interface Blog {
   id: number;
@@ -12,26 +13,19 @@ interface Blog {
 }
 
 const Blogs: React.FC = () => {
-  const [blogs, setBlogs] = useState<Blog[]>([]); 
+  const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
-    setBlogs(blogsData.blogs); 
-  }, []); 
+    setBlogs(blogsData.blogs);
+  }, []);
 
   return (
-    <div>
-      {blogs.length > 0 ? (
-        blogs.map(blog => (
-          <div key={blog.id}>
-            <h2>{blog.title}</h2>
-            <p>{blog.content}</p>
-          </div>
-        ))
-      ) : (
-        <div>
-          <p>Loading...</p>
-        </div>
-      )}
+    <div className="flex flex-col">
+      <Navbar />
+      <div>
+
+      </div>
+      <Footer />
     </div>
   );
 };
