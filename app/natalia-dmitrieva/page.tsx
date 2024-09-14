@@ -57,10 +57,10 @@ const Page = () => {
                 <div className="mt-6 max-w-2xl text-gray-600 text-center leading-relaxed px-4">
                     <p className="text-base sm:text-lg mb-4">
                         Natalia Dmitrieva has been doing hair for many years. She specializes in hair care and stylish haircuts that suit all types of hair.
-                        With a deep understanding of hair health, Natalia ensures that every style also contributes to the overall well-being of her clients' hair.
+                        With a deep understanding of hair health, Natalia ensures that every style also contributes to the overall well-being of her clients hair.
                     </p>
                     <p className="text-base sm:text-lg mb-4">
-                        Beyond styling, Natalia's passion lies in educating clients about maintaining healthy, beautiful hair. Her expertise shines through in both her work and her commitment to sharing knowledge.
+                        Beyond styling, Natalia &apos; passion lies in educating clients about maintaining healthy, beautiful hair. Her expertise shines through in both her work and her commitment to sharing knowledge.
                     </p>
                 </div>
             </div>

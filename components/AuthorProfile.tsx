@@ -31,7 +31,7 @@ const AuthorProfile = () => {
 
             <div className="mt-4 text-gray-600 leading-relaxed">
                 <p className="text-sm sm:text-base mb-3">
-                    Natalia Dmitrieva has been doing hair for many years. She's not only
+                    Natalia Dmitrieva has been doing hair for many years. She&apos; not only
                     great with styles but also at hair care.
                 </p>
                 <Link href="/natalia-dmitrieva" className="text-[#9C3A14] hover:underline">

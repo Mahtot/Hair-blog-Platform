@@ -66,7 +66,7 @@ const Page = () => {
         if (storedUser) {
             setUser ? setUser(JSON.parse(storedUser)) : '';
         }
-    }, []);
+    }, [user])
 
     useEffect(() => {
         if (user) {
