@@ -92,7 +92,7 @@ const Gallery = () => {
               data-sub-html={`<h4>${blog.title}</h4><p>Read more at <a href='/blog/${blog.id}'>this link</a></p>`}
             >
               <img
-                className="img-responsive"
+                className="img-responsive cursor-pointer"
                 src={blog.imgUrl}
                 alt={blog.title}
               />
