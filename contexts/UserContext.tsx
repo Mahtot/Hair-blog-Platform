@@ -31,6 +31,7 @@ type Comments = Comment[];
 
 interface UserContextType {
     user: User | null;
+    comments: Comment[] | null;
     setUser: (user: User | null) => void;
     login: (email: string, password: string) => Promise<boolean>;
     logout: () => void;
@@ -44,12 +45,18 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
-    const [comments, setComments] = useState<Comments>([]);
+    const [comments, setComments] = useState<Comment[]>([]);
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
+        const storedComments = localStorage.getItem('storedComments')
+
         if (storedUser) {
             setUser(JSON.parse(storedUser));
+        }
+
+        if (storedComments) {
+            setComments(JSON.parse(storedComments))
         }
     }, []);
 
@@ -57,12 +64,11 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     const addComments = (comment: Comment) => {
         const storedComments = localStorage.getItem('storedComments');
         const comments = storedComments ? JSON.parse(storedComments) : [];
-
         comments.push(comment);
         localStorage.setItem('storedComments', JSON.stringify(comments));
         setComments(comments);
-        alert('Thank you for your comment!')
-    }
+        alert('Thank you for your comment!');
+    };
 
     const register = async (userData: User) => {
         const storedUsers = localStorage.getItem("registeredUsers");
@@ -149,7 +155,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
 
     return (
-        <UserContext.Provider value={{ user, setUser, login, logout, register, addBlog, removeBlog, addComments }}>
+        <UserContext.Provider value={{ user, comments, setUser, login, logout, register, addBlog, removeBlog, addComments }}>
             {children}
         </UserContext.Provider>
     );
