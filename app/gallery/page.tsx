@@ -31,14 +31,19 @@ const Gallery = () => {
 
   useEffect(() => {
     const initializeGallery = () => {
-      fjGallery(document.querySelectorAll('.gallery'), {
-        itemSelector: '.gallery__item',
-        rowHeight: 250, // Increased row height for bigger images
-        lastRow: 'center', // Center the last row for better symmetry
-        gutter: 10, // Increased gutter for more spacing between images
-        rowHeightTolerance: 0.2, // Allow flexibility in row heights
-        calculateItemsHeight: true,
-      });
+      const galleryElements = document.querySelectorAll('.gallery');
+      if (galleryElements.length > 0) {
+        fjGallery(galleryElements, {
+          itemSelector: '.gallery__item',
+          rowHeight: 250,
+          lastRow: 'center',
+          gutter: 10,
+          rowHeightTolerance: 0.2,
+          calculateItemsHeight: true,
+        });
+      } else {
+        console.error('No gallery elements found.');
+      }
     };
 
     if (blogs.length > 0) {
@@ -64,6 +69,7 @@ const Gallery = () => {
       }
     }
   }, [blogs]);
+
 
   return (
     <div>
