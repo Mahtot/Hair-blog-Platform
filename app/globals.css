@@ -252,3 +252,16 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+
+.contact h1 {
+  animation: anim 1s 1;
+}
+
+@keyframes anim {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
