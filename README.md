@@ -14,25 +14,22 @@ This is a hair blogging webapp, which includes different hair tips, and users ca
 **Styling**: TailwindCSS
 **Plugins**: LightGallery, Flickr Justified Gallery
 
-## Installation
+## Setup
 
-1. **Clone the repository**
-```bash
- git clone https://github.com/Mahtot/Hair-blog-Platform.git
+To set up this project locally, follow these steps:
 
-2.Navigate to the project directory:
-  ```bash
-  cd hair-blog
+1. **Clone the Repository**
 
-3.**Install dependencies**:
-  ```bash
-  npm install
-or
-  ```bash
-  yarn install
+   ```bash
+   git clone https://github.com/Mahtot/Hair-blog-Platform.git
+   cd hair-day
+2. **Install Dependencies**
+   ```bash
+   npm install
 
-4. Run the development server:
-  ```bash
-  npm run dev 
+3. **Run the Development Server**
+     ```bash
+       npm run dev
+
 
 You are good to go now :(
