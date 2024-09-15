@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({ blog }) => {
                     {showAuthor && <div className="absolute z-50 top-7" ><AuthorProfile /></div>}
                 </div>                <h2 className="text-xl font-semibold">{blog.title}</h2>
                 <p className="mt-2 line-clamp-2 text-gray-700">{blog.content}</p>
-                <Link href={`blogs/${blog.id}`} className="mt-auto max-w-max p-2 rounded-sm flex gap-2 border border-[#b57d6a] bg-white text-[#9C3A14] hover:text-white hover:bg-[#9C3A14] transition-all duration-300">
+                <Link href={`/blogs/${blog.id}`} className="mt-auto max-w-max p-2 rounded-sm flex gap-2 border border-[#b57d6a] bg-white text-[#9C3A14] hover:text-white hover:bg-[#9C3A14] transition-all duration-300">
                     Read more
                     <MdOutlineArrowRightAlt size={'1.5rem'} />
                 </Link>
