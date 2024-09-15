@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 # Hair Blogging platform
-This is a hair blogging webapp, which includes different hair tips, and users can see these tips, create an account save blogs to read later and post*share) their own blogs as well.
+This is a hair blogging webapp, which includes different hair tips, and users can see these tips, create an account save blogs to read later and post or share their own blogs as well.
 
 ## Features
 - User Accounts: Create and manage personal accounts.
@@ -11,7 +11,9 @@ This is a hair blogging webapp, which includes different hair tips, and users ca
 
 ## Tech Stack
 **Frontend**: Next.js, TypeScript, TailwindCSS
+
 **Styling**: TailwindCSS
+
 **Plugins**: LightGallery, Flickr Justified Gallery
 
 ## Setup
